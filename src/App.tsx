@@ -1,4 +1,3 @@
-import './App.css';
 import FullscreenPicture from './components/FullscreenPicture';
 import GroomAndBrideSection from 'components/GroomBride';
 

@@ -4,13 +4,13 @@
 
 @layer base {
   h1 {
-    @apply text-5xl;
+    @apply text-5xl font-serif;
   }
   h2 {
-    @apply text-4xl;
+    @apply text-4xl font-serif;
   }
   h3 {
-    @apply text-2xl;
+    @apply text-2xl font-serif;
   }
 }
 
@@ -35,7 +35,7 @@
 }
 
 .section-title {
-  @apply font-serif text-center;
+  @apply text-center;
 }
 
 body {
@@ -45,6 +45,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f3ece6;
 }
 
 code {
