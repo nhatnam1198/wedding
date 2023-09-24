@@ -602,6 +602,10 @@ h3 {
   --tw-backdrop-sepia:  ;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -610,24 +614,36 @@ h3 {
   position: relative;
 }
 
+.left-0 {
+  left: 0px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+.h-80 {
+  height: 20rem;
 }
 
 .h-\[296px\] {
   height: 296px;
 }
 
-.h-\[300px\] {
-  height: 300px;
-}
-
 .h-\[350px\] {
   height: 350px;
-}
-
-.h-\[600px\] {
-  height: 600px;
 }
 
 .h-fit {
@@ -636,22 +652,24 @@ h3 {
   height: fit-content;
 }
 
-.max-h-fit {
-  max-height: -webkit-fit-content;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
+.h-screen {
+  height: 100vh;
 }
 
-.min-h-\[296px\] {
-  min-height: 296px;
+.h-4\/5 {
+  height: 80%;
+}
+
+.h-\[80vh\] {
+  height: 80vh;
+}
+
+.max-h-full {
+  max-height: 100%;
 }
 
 .min-h-\[300px\] {
   min-height: 300px;
-}
-
-.min-h-\[350px\] {
-  min-height: 350px;
 }
 
 .min-h-\[600px\] {
@@ -662,30 +680,46 @@ h3 {
   width: 300px;
 }
 
+.w-\[350px\] {
+  width: 350px;
+}
+
 .w-\[450px\] {
   width: 450px;
 }
 
-.w-\[860px\] {
-  width: 860px;
+.w-\[800px\] {
+  width: 800px;
 }
 
-.max-w-\[90\%\] {
-  max-width: 90%;
+.w-screen {
+  width: 100vw;
 }
 
 .max-w-\[90vw\] {
   max-width: 90vw;
 }
 
-.translate-y-48 {
-  --tw-translate-y: 12rem;
+.max-w-full {
+  max-width: 100%;
+}
+
+.-translate-y-28 {
+  --tw-translate-y: -7rem;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
           transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .resize {
   resize: both;
+}
+
+.auto-cols-auto {
+  grid-auto-columns: auto;
 }
 
 .flex-row {
@@ -700,22 +734,34 @@ h3 {
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
 .gap-8 {
   gap: 2rem;
 }
 
-.rounded-3xl {
-  border-radius: 1.5rem;
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
-.rounded-l-3xl {
-  border-top-left-radius: 1.5rem;
-  border-bottom-left-radius: 1.5rem;
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
-.rounded-t-3xl {
-  border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
+.rounded-l-2xl {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.rounded-t-2xl {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 .border-2 {
@@ -727,26 +773,37 @@ h3 {
   border-color: rgb(168 162 158 / var(--tw-border-opacity));
 }
 
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
 .object-cover {
   object-fit: cover;
 }
 
-.object-bottom {
-  object-position: bottom;
+.object-center {
+  object-position: center;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .p-8 {
   padding: 2rem;
-}
-
-.px-28 {
-  padding-left: 7rem;
-  padding-right: 7rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .text-center {
@@ -760,6 +817,11 @@ h3 {
 .text-\[\#57442c\] {
   --tw-text-opacity: 1;
   color: rgb(87 68 44 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 @font-face {
@@ -795,19 +857,28 @@ h3 {
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 8rem;
 }
 
 .section-title {
   text-align: center;
 }
 
+.section-description {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .section-description {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+}
+
 body {
   margin: 0;
-  font-family: Megante, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Megante, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f3ece6;
@@ -819,12 +890,19 @@ code {
 }
 
 @media (min-width: 1024px) {
-  .lg\:flex-row {
-    flex-direction: row;
+  .lg\:h-\[400px\] {
+    height: 400px;
   }
 
-  .lg\:px-28 {
-    padding-left: 7rem;
-    padding-right: 7rem;
+  .lg\:w-\[400px\] {
+    width: 400px;
+  }
+
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
   }
 }

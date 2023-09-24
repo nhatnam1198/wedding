@@ -10,7 +10,7 @@
   --g: 8px;  /* control the gap */
   --c: #755C3B;
 
-  padding: 350px 90px 40px 90px;
+  padding: 2.5rem 4rem;
   border: 0 var(--t) var(--t) var(--t) solid #0000;
   border-radius: 10px;
   background:
@@ -25,7 +25,6 @@
       var(--t) 50%/100% calc(100% - 2*(var(--s) + var(--g)))
       repeat-x padding-box;
   transition: --s .5s;
-  transform: translate(0, 20%);
 }
 
 .frame:hover {

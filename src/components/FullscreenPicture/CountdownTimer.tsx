@@ -48,8 +48,8 @@ export default function CountdownTimer() {
   const spin = <Spin indicator={antIcon} />;
 
   return (
-    <Space direction="vertical">
-      <p>Save the date: 22 Oct 2023</p>
+    <Space direction="vertical" style={{ textShadow: '1px 1px 2px black' }}>
+      <strong>Save the date: 22 Oct 2023</strong>
 
       <Space direction="horizontal" size={30}>
         <Space direction="vertical">
