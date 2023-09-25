@@ -602,6 +602,14 @@ h3 {
   --tw-backdrop-sepia:  ;
 }
 
+.\!visible {
+  visibility: visible !important;
+}
+
+.visible {
+  visibility: visible;
+}
+
 .fixed {
   position: fixed;
 }

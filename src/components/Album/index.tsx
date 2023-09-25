@@ -1,12 +1,28 @@
 import { useState } from 'react';
 import AlbumCard from './AlbumCard';
 import { ALBUMS } from './constants';
-import { Carousel, Modal } from 'antd';
-import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import './styles.css';
+import Modal from 'components/Modal';
+import { range } from 'lodash';
+import Carousel from 'react-spring-3d-carousel';
+import useClickOutside from 'hooks/useClickOutside';
 
 export default function AlbumSection() {
   const [open, setOpen] = useState(false);
+  const clickRef = useClickOutside(() => setOpen(false));
+
+  const [goToSlide, setGoToSlide] = useState(0);
+
+  const slides = range(16).map((index: number) => ({
+    key: index,
+    content: (
+      <img
+        src="https://res.cloudinary.com/dw5ii3leu/image/upload/v1695534133/wedding%20site/1_pfu2e8.jpg"
+        alt="ben-thanh"
+      />
+    ),
+    onClick: () => setGoToSlide(index),
+  }));
 
   function onClickCard() {
     setOpen(true);
@@ -34,33 +50,17 @@ export default function AlbumSection() {
           ))}
         </div>
       </div>
-      <Modal
-        open={open}
-        footer={null}
-        width={1050}
-        onCancel={onCloseAlbum}
-        centered
-        closeIcon={false}
-        keyboard
-        bodyStyle={{
-          padding: 0,
-        }}
-      >
+      <Modal visible={open}>
         <Carousel
-          draggable
-          infinite
-          effect="fade"
-          arrows
-          accessibility
-          centerMode
-          nextArrow={<RightOutlined />}
-          prevArrow={<LeftOutlined />}
-        >
-          <img src="https://res.cloudinary.com/dw5ii3leu/image/upload/v1695527271/wedding%20site/1_ooqk59.jpg" />
-
-          {/* <img src="https://res.cloudinary.com/dw5ii3leu/image/upload/v1695527269/wedding%20site/1_ad493c.jpg" /> */}
-          <img src="https://res.cloudinary.com/dw5ii3leu/image/upload/v1695527239/wedding%20site/1_r4yqma.jpg" />
-        </Carousel>
+          showNavigation={false}
+          goToSlide={goToSlide}
+          slides={slides}
+          offsetRadius={2}
+          animationConfig={{
+            tension: 120,
+            fiction: 14,
+          }}
+        />
       </Modal>
     </>
   );
