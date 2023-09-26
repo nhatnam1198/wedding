@@ -1,3 +1,4 @@
+import LazyImage from 'components/LazyImage';
 import './styles.css';
 
 export interface AlbumCardProps {
@@ -12,12 +13,11 @@ export default function AlbumCard(props: AlbumCardProps) {
 
   return (
     <div className="cursor-pointer" onClick={onClick}>
-      <div
-        style={{
-          backgroundImage: `url(${imgUrl})`,
-        }}
+      <LazyImage
+        src={imgUrl}
         className="h-[350px] w-[350px] lg:h-[400px] lg:w-[400px] rounded-xl bg-center bg-no-repeat bg-cover album-card relative"
-      ></div>
+      />
+
       <div
         style={{ textShadow: '1px 1px 2px black' }}
         className="p-6 text-white absolute -translate-y-28"

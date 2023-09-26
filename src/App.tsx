@@ -1,7 +1,7 @@
-import AlbumSection from 'components/Album';
-import FullscreenPicture from './components/FullscreenPicture';
-import GroomAndBrideSection from 'components/GroomBride';
-import Footer from 'components/Footer';
+import AlbumSection from 'containers/Album';
+import FullscreenPicture from './containers/FullscreenPicture';
+import GroomAndBrideSection from 'containers/GroomBride';
+import Footer from 'containers/Footer';
 
 function App() {
   return (

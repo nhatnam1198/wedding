@@ -2,26 +2,22 @@ import { AlbumCardProps } from './AlbumCard';
 
 export const ALBUMS: Omit<AlbumCardProps, 'onClick'>[] = [
   {
-    imgUrl:
-      'https://res.cloudinary.com/dw5ii3leu/image/upload/v1695527271/wedding%20site/1_ooqk59.jpg',
+    imgUrl: '/images/ben-thanh/1.jpeg',
     numberOfPhotos: 16,
     description: 'Hình cưới trước chợ Bến Thành',
   },
   {
-    imgUrl:
-      'https://res.cloudinary.com/dw5ii3leu/image/upload/v1695527269/wedding%20site/1_ad493c.jpg',
+    imgUrl: '/images/nha-hat/1.jpeg',
     numberOfPhotos: 14,
     description: 'Hình cưới trước nhà hát thành phố',
   },
   {
-    imgUrl:
-      'https://res.cloudinary.com/dw5ii3leu/image/upload/v1695527239/wedding%20site/1_r4yqma.jpg',
+    imgUrl: '/images/song-sg/1.jpeg',
     numberOfPhotos: 18,
     description: 'Hình cưới bên sông Sài Gòn',
   },
   {
-    imgUrl:
-      'https://res.cloudinary.com/dw5ii3leu/image/upload/v1695534133/wedding%20site/1_pfu2e8.jpg',
+    imgUrl: '/images/sapa/1.jpeg',
     numberOfPhotos: 22,
     description: 'Hình cưới ở Sapa',
   },

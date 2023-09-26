@@ -5,21 +5,17 @@ import './styles.css';
 import Modal from 'components/Modal';
 import { range } from 'lodash';
 import Carousel from 'react-spring-3d-carousel';
-import useClickOutside from 'hooks/useClickOutside';
+import { CloseOutlined } from '@ant-design/icons';
 
 export default function AlbumSection() {
   const [open, setOpen] = useState(false);
-  const clickRef = useClickOutside(() => setOpen(false));
 
   const [goToSlide, setGoToSlide] = useState(0);
 
   const slides = range(16).map((index: number) => ({
     key: index,
     content: (
-      <img
-        src="https://res.cloudinary.com/dw5ii3leu/image/upload/v1695534133/wedding%20site/1_pfu2e8.jpg"
-        alt="ben-thanh"
-      />
+      <img src="/images/ben-thanh/1.jpeg" alt="ben-thanh" loading="lazy" />
     ),
     onClick: () => setGoToSlide(index),
   }));
@@ -51,6 +47,10 @@ export default function AlbumSection() {
         </div>
       </div>
       <Modal visible={open}>
+        <CloseOutlined
+          className="absolute top-10 right-10 cursor-pointer z-50 text-white text-2xl"
+          onClick={onCloseAlbum}
+        />
         <Carousel
           showNavigation={false}
           goToSlide={goToSlide}
