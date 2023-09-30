@@ -3,11 +3,11 @@
   border: none !important;
   color: #fff;
   transition: 0.5s;
+  width: 90%;
   max-width: 600px;
   height: 45px;
-  width: 90%;
   font-family: Megante;
-  text-color: white;
+  text-color: white !important;
 }
 
 .text-area {
@@ -17,13 +17,22 @@
   transition: 0.5s;
   max-width: 600px;
   font-family: Megante;
-  text-color: white;
-  max-height: 200px;
+  text-color: white !important;
+  max-height: 150px;
   overflow-y: auto;
   resize: none;
+  width: 90%;
+  padding: 0.8rem;
 }
 
 .submit-button {
-  background-color: blue;
   font-family: Megante;
+  max-width: 600px;
+  width: 90%;
+  height: 45px;
+  @apply bg-stone-500 hover:text-white hover:bg-stone-400 border-none text-white;
+}
+
+::placeholder {
+  color: white;
 }

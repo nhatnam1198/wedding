@@ -1,5 +1,5 @@
 import { Space, SpaceProps } from 'antd';
-import useViewportWidth from 'hooks/useViewPortWidth';
+import useViewportWidth from 'hooks/useViewportWidth';
 import { useEffect, useState } from 'react';
 
 export interface CardProps {

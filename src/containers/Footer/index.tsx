@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <LazyImage src="/images/song-sg/15.jpeg" className="footer h-[250px]">
       <div className="fullscreen-img-content flex flex-col gap-4">
-        <h1>Hoang & Trinh</h1>
-        <p>23 Oct 2023</p>
+        <h1 className="lg:text-5xl text-2xl">Hoang & Trinh</h1>
+        <p>22 Oct 2023</p>
       </div>
     </LazyImage>
   );
