@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import AlbumCard from './AlbumCard';
 import { ALBUMS, Album } from './constants';
 import './styles.css';
@@ -6,7 +6,7 @@ import Modal from 'components/Modal';
 import { range } from 'lodash';
 import Carousel from 'react-spring-3d-carousel';
 import { CloseOutlined } from '@ant-design/icons';
-import LazyImage from 'components/LazyImage';
+import LazyBackgroundImage from 'components/LazyBackgroundImage';
 
 export default function AlbumSection() {
   const [open, setOpen] = useState(false);
@@ -18,30 +18,36 @@ export default function AlbumSection() {
     ALBUMS.find((album) => album.albumName === selectedAlbum)?.numberOfPhotos ??
     0;
 
-  const slides = range(numberOfSlides).map((index) => ({
-    key: index,
-    content: (
-      <img
-        src={`/images/${selectedAlbum}/${index + 1}.jpeg`}
-        alt={selectedAlbum}
-        loading="eager"
-      />
-    ),
-    onClick: () => setGoToSlide(index),
-  }));
+  const slides = useMemo(
+    () =>
+      range(numberOfSlides).map((index) => ({
+        key: index,
+        content: (
+          <img
+            src={`/images/${selectedAlbum}/${index + 1}.jpeg`}
+            alt={selectedAlbum}
+            loading="eager"
+          />
+        ),
+        onClick: () => setGoToSlide(index),
+      })),
+    [numberOfSlides, selectedAlbum],
+  );
 
   function onClickCard(albumName: Album['albumName']) {
     setSelectedAlbum(albumName);
     setOpen(true);
+    document.body.style.overflow = 'hidden';
   }
 
   function onCloseAlbum() {
     setOpen(false);
+    document.body.style.overflow = 'auto';
   }
 
   return (
     <>
-      <LazyImage
+      <LazyBackgroundImage
         src="/images/background-bottom.png"
         className="bg-contain bg-bottom bg-no-repeat relative pb-52"
       >
@@ -61,7 +67,7 @@ export default function AlbumSection() {
             ))}
           </div>
         </div>
-      </LazyImage>
+      </LazyBackgroundImage>
       <Modal visible={open}>
         <CloseOutlined
           className="absolute top-10 right-10 cursor-pointer z-50 text-white text-2xl"

@@ -2,13 +2,13 @@ import useViewportWidth from 'hooks/useViewportWidth';
 import Card from './Card';
 import { TIMELINE_CARDS } from './constants';
 import './styles.css';
-import LazyImage from 'components/LazyImage';
+import LazyBackgroundImage from 'components/LazyBackgroundImage';
 
 export default function GroomAndBrideSection() {
   const windowWidth = useViewportWidth();
 
   return (
-    <LazyImage
+    <LazyBackgroundImage
       src="/images/background-top.png"
       className="bg-contain bg-top bg-no-repeat relative"
     >
@@ -40,11 +40,11 @@ export default function GroomAndBrideSection() {
           }`}
         >
           {TIMELINE_CARDS.map((card) => (
-            <Card {...card} direction="horizontal" />
+            <Card {...card} key={card.title} direction="horizontal" />
           ))}
           <h3 className="text-center">The story is to be continued...</h3>
         </div>
       </div>
-    </LazyImage>
+    </LazyBackgroundImage>
   );
 }

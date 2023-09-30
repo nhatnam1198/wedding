@@ -13,6 +13,7 @@
     "@types/react-dom": "^18.0.0",
     "antd": "^5.9.2",
     "dayjs": "^1.11.10",
+    "firebase": "^10.4.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

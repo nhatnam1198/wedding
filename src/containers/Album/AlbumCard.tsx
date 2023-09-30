@@ -1,4 +1,4 @@
-import LazyImage from 'components/LazyImage';
+import LazyBackgroundImage from 'components/LazyBackgroundImage';
 import './styles.css';
 
 export interface AlbumCardProps {
@@ -16,7 +16,7 @@ export default function AlbumCard(props: AlbumCardProps) {
       className="cursor-pointer rounded-xl overflow-hidden h-[350px] w-[350px] lg:h-[400px] lg:w-[400px]"
       onClick={onClick}
     >
-      <LazyImage
+      <LazyBackgroundImage
         src={imgUrl}
         className="w-full h-full bg-center bg-no-repeat bg-cover album-card relative"
       />

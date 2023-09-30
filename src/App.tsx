@@ -11,8 +11,6 @@ function App() {
       <GroomAndBrideSection />
       <AlbumSection />
       <WishBox />
-
-      <div className="h-80" />
       <Footer />
     </div>
   );

@@ -1,11 +1,13 @@
 import { useState, useEffect, PropsWithChildren } from 'react';
 
-interface LazyImageProps {
+interface LazyBackgroundImageProps {
   src: string;
   className?: string;
 }
 
-export default function LazyImage(props: PropsWithChildren<LazyImageProps>) {
+export default function LazyBackgroundImage(
+  props: PropsWithChildren<LazyBackgroundImageProps>,
+) {
   const { src, className, children } = props;
 
   const [sourceLoaded, setSourceLoaded] = useState<string>();
