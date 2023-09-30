@@ -1,5 +1,6 @@
 import { Space, SpaceProps } from 'antd';
-import { useEffect, useState } from 'react'; // Import useEffect and useState
+import useViewportWidth from 'hooks/useViewPortWidth';
+import { useEffect, useState } from 'react';
 
 export interface CardProps {
   imgUrl: string;
@@ -16,22 +17,9 @@ export default function Card(props: CardProps) {
     direction: propDirection = 'vertical',
   } = props;
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const windowWidth = useViewportWidth();
   const [direction, setDirection] =
     useState<SpaceProps['direction']>(propDirection);
-
-  // Add an event listener to update windowWidth when the window is resized
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   // Determine the direction based on windowWidth
   useEffect(() => {

@@ -1,0 +1,29 @@
+.input {
+  background: rgba(255, 255, 255, 0.2);
+  border: none !important;
+  color: #fff;
+  transition: 0.5s;
+  max-width: 600px;
+  height: 45px;
+  width: 90%;
+  font-family: Megante;
+  text-color: white;
+}
+
+.text-area {
+  background: rgba(255, 255, 255, 0.2);
+  border: none !important;
+  color: #fff;
+  transition: 0.5s;
+  max-width: 600px;
+  font-family: Megante;
+  text-color: white;
+  max-height: 200px;
+  overflow-y: auto;
+  resize: none;
+}
+
+.submit-button {
+  background-color: blue;
+  font-family: Megante;
+}

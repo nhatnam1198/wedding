@@ -1,8 +1,11 @@
+import useViewportWidth from 'hooks/useViewPortWidth';
 import Card from './Card';
 import { TIMELINE_CARDS } from './constants';
 import './styles.css';
 
 export default function GroomAndBrideSection() {
+  const windowWidth = useViewportWidth();
+
   return (
     <div className="section relative h-fit">
       <h1 className="section-title">Groom and Bride</h1>
@@ -26,7 +29,11 @@ export default function GroomAndBrideSection() {
         />
       </div>
 
-      <div className="flex flex-col items-center gap-8 frame">
+      <div
+        className={`flex flex-col items-center gap-8 ${
+          windowWidth > 900 && 'frame'
+        }`}
+      >
         {TIMELINE_CARDS.map((card) => (
           <Card {...card} direction="horizontal" />
         ))}

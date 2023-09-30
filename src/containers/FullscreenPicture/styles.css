@@ -1,6 +1,4 @@
 .fullscreen-img {
-
-  background-color: #cccccc;
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,6 +27,10 @@
 @media screen and (max-width: 768px) {
   .fullscreen-img {
     height: 35vh;
+  }
+
+  .fullscreen-img-title {
+    font-size: 3rem;
   }
 
   .fullscreen-img-content {
