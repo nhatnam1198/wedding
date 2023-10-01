@@ -31,8 +31,11 @@ export default function WishForm({
       theme={{
         components: {
           Button: {
+            algorithm: true,
             colorPrimary: '#826542',
-            algorithm: true, // Enable algorithm
+          },
+          Input: {
+            colorTextPlaceholder: '#000000',
           },
         },
       }}
@@ -68,16 +71,14 @@ export default function WishForm({
             placeholder="Your kind wishes go here"
           />
         </Form.Item>
-        <Form.Item>
-          <Button
-            loading={buttonLoading}
-            htmlType="submit"
-            type="primary"
-            className="submit-button"
-          >
-            {buttonLoading ? 'Sending your wishes' : 'Send your wishes'}
-          </Button>
-        </Form.Item>
+        <Button
+          loading={buttonLoading}
+          htmlType="submit"
+          type="primary"
+          className="submit-button"
+        >
+          {buttonLoading ? 'Sending your wishes' : 'Send your wishes'}
+        </Button>
       </Form>
     </ConfigProvider>
   );
