@@ -47,7 +47,13 @@ export default function WishBox() {
       );
     }
 
-    return data?.map((wish) => <WishCard key={wish.content} {...wish} />);
+    return (
+      <div className="grid gap-10">
+        {data?.map((wish) => (
+          <WishCard key={wish.content} {...wish} />
+        ))}
+      </div>
+    );
   }
 
   return (

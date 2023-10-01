@@ -19,7 +19,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url('../public/fonts/Drainwood/Drainwood.otf');
+  src: url('../public/fonts/Drainwood.otf');
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url('../public/fonts/Megante/Megante.otf');
+  src: url('../public/fonts/Megante.otf');
 }
 
 .section {

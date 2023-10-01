@@ -15,10 +15,15 @@ export default function WishForm({
 
   const onFinish = async (values: FieldType) => {
     setButtonLoading(true);
-    await createWish(values);
-    setButtonLoading(false);
-    form.resetFields();
-    refetch();
+
+    try {
+      await createWish(values);
+      setButtonLoading(false);
+      form.resetFields();
+      refetch();
+    } catch (error) {
+      alert('Please try again later!');
+    }
   };
 
   return (

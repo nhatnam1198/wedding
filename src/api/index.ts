@@ -16,11 +16,7 @@ export async function getWishes() {
 }
 
 export async function createWish(wish: Wish) {
-  try {
-    const docRef = await addDoc(wishesCol, wish);
-    console.log('Creating a new wish with id ', docRef.id);
-  } catch (error) {
-    console.error('Error creating a wish: ', error);
-    alert('Please try again later!');
-  }
+  const docRef = await addDoc(wishesCol, wish);
+
+  console.log('Creating a new wish with id ', docRef.id);
 }
