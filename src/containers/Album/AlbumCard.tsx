@@ -13,7 +13,7 @@ export default function AlbumCard(props: AlbumCardProps) {
 
   return (
     <div
-      className="cursor-pointer rounded-xl overflow-hidden h-[350px] w-[350px] lg:h-[400px] lg:w-[400px]"
+      className="cursor-pointer rounded-xl overflow-hidden h-[350px] w-[350px] lg:h-[400px] lg:w-[400px] fade-in"
       onClick={onClick}
     >
       <LazyBackgroundImage

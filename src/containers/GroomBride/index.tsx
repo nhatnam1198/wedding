@@ -40,7 +40,12 @@ export default function GroomAndBrideSection() {
           }`}
         >
           {TIMELINE_CARDS.map((card) => (
-            <Card {...card} key={card.title} direction="horizontal" />
+            <Card
+              {...card}
+              key={card.title}
+              direction="horizontal"
+              className={`slide-in from-bottom`}
+            />
           ))}
           <h3 className="text-center">The story is to be continued...</h3>
         </div>

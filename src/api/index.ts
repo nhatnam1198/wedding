@@ -21,5 +21,6 @@ export async function createWish(wish: Wish) {
     console.log('Creating a new wish with id ', docRef.id);
   } catch (error) {
     console.error('Error creating a wish: ', error);
+    alert('Please try again later!');
   }
 }

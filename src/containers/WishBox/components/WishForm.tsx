@@ -1,6 +1,7 @@
 import { Form, Input, Button, ConfigProvider } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import { Wish, createWish } from 'api';
+import { useState } from 'react';
 
 type FieldType = Wish;
 
@@ -10,9 +11,12 @@ export default function WishForm({
   refetch: () => Promise<void>;
 }) {
   const [form] = useForm<FieldType>();
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   const onFinish = async (values: FieldType) => {
+    setButtonLoading(true);
     await createWish(values);
+    setButtonLoading(false);
     form.resetFields();
     refetch();
   };
@@ -60,8 +64,13 @@ export default function WishForm({
           />
         </Form.Item>
         <Form.Item>
-          <Button htmlType="submit" type="primary" className="submit-button">
-            Send your wishes
+          <Button
+            loading={buttonLoading}
+            htmlType="submit"
+            type="primary"
+            className="submit-button"
+          >
+            {buttonLoading ? 'Sending your wishes' : 'Send your wishes'}
           </Button>
         </Form.Item>
       </Form>

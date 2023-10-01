@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
-import { Space, Spin } from 'antd';
-import { LoadingOutlined } from '@ant-design/icons';
+import { Space } from 'antd';
 import { WEDDING_DATE } from 'appConstants';
 import { useEffect, useState } from 'react';
+import MySpinner from 'components/MySpinner';
 
 export default function CountdownTimer() {
   const countDownDate = dayjs(WEDDING_DATE).valueOf();
@@ -41,31 +41,25 @@ export default function CountdownTimer() {
     return <p>We are married!</p>;
   }
 
-  const antIcon = (
-    <LoadingOutlined style={{ color: 'white', fontSize: 24 }} spin />
-  );
-
-  const spin = <Spin indicator={antIcon} />;
-
   return (
     <Space direction="vertical" style={{ textShadow: '1px 1px 2px black' }}>
       <strong>Save the date: 22 Oct 2023</strong>
 
       <Space direction="horizontal" size={30}>
         <Space direction="vertical">
-          {days ? days : spin}
+          {days ? days : <MySpinner />}
           DAYS
         </Space>
         <Space direction="vertical">
-          {hours ? hours : spin}
+          {hours ? hours : <MySpinner />}
           HOURS
         </Space>
         <Space direction="vertical">
-          {minutes ? minutes : spin}
+          {minutes ? minutes : <MySpinner />}
           MINUTES
         </Space>
         <Space direction="vertical">
-          {seconds ? seconds : spin}
+          {seconds ? seconds : <MySpinner />}
           SECONDS
         </Space>
       </Space>

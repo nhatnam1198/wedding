@@ -5,7 +5,7 @@ import './styles.css';
 export default function FullscreenPicture() {
   return (
     <LazyBackgroundImage
-      className="fullscreen-img"
+      className="fullscreen-img fade-in"
       src="/images/fullscreen.jpeg"
     >
       <div className="fullscreen-img-content">

@@ -1,4 +1,5 @@
 import { Space, SpaceProps } from 'antd';
+import classNames from 'classnames';
 import useViewportWidth from 'hooks/useViewportWidth';
 import { useEffect, useState } from 'react';
 
@@ -7,6 +8,7 @@ export interface CardProps {
   title: string;
   description: string;
   direction?: SpaceProps['direction'];
+  className?: string;
 }
 
 export default function Card(props: CardProps) {
@@ -15,6 +17,7 @@ export default function Card(props: CardProps) {
     title,
     description,
     direction: propDirection = 'vertical',
+    className = 'fade-in',
   } = props;
 
   const windowWidth = useViewportWidth();
@@ -39,7 +42,10 @@ export default function Card(props: CardProps) {
 
   return (
     <div
-      className={`${containerDimension} max-w-[90vw] h-fit flex border-2 border-stone-400 rounded-2xl`}
+      className={classNames(
+        className,
+        `${containerDimension} max-w-[90vw] h-fit flex border-2 border-stone-400 rounded-2xl`,
+      )}
     >
       <img
         src={imgUrl}
