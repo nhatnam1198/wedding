@@ -36,7 +36,7 @@ export default function WishBox() {
 
   function renderWishesList() {
     if (loading) {
-      return <MySpinner />;
+      return <MySpinner color="#826542" />;
     }
 
     if (error || data?.length === 0) {

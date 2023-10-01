@@ -26,7 +26,7 @@ export default function WishForm({
       theme={{
         components: {
           Button: {
-            colorPrimary: 'rgb(120, 113, 108)',
+            colorPrimary: '#826542',
             algorithm: true, // Enable algorithm
           },
         },
@@ -42,7 +42,7 @@ export default function WishForm({
       >
         <Form.Item<FieldType>
           name="createdBy"
-          className="w-full text-white"
+          className="w-full text-black"
           rules={[{ required: true, message: 'Please let us know your name' }]}
         >
           <Input className="input" placeholder="Your name" />
@@ -55,7 +55,7 @@ export default function WishForm({
               message: 'Please send your wishes to the groom and bride',
             },
           ]}
-          className="w-full text-white"
+          className="w-full text-black"
         >
           <Input.TextArea
             rows={6}

@@ -1,5 +1,5 @@
 .input {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.5);
   border: none !important;
   color: #fff;
   transition: 0.5s;
@@ -7,17 +7,15 @@
   max-width: 600px;
   height: 45px;
   font-family: Megante;
-  text-color: white !important;
 }
 
 .text-area {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.5);
   border: none !important;
   color: #fff;
   transition: 0.5s;
   max-width: 600px;
   font-family: Megante;
-  text-color: white !important;
   max-height: 150px;
   overflow-y: auto;
   resize: none;
@@ -30,9 +28,5 @@
   max-width: 600px;
   width: 90%;
   height: 45px;
-  @apply bg-stone-500 hover:text-white hover:bg-stone-400 border-none text-white;
-}
-
-::placeholder {
-  color: white;
+  @apply bg-[#826542] hover:text-white hover:bg-stone-600 border-none text-white;
 }
