@@ -12,6 +12,10 @@
   h3 {
     @apply text-2xl font-serif;
   }
+
+  h4 {
+    @apply text-xl font-serif;
+  }
 }
 
 @font-face {
@@ -90,6 +94,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f3ece6;
   overflow-x: hidden;
+}
+
+p {
+  font-family: Megante, sans-serif;
 }
 
 code {

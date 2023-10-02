@@ -4,6 +4,7 @@ import GroomAndBrideSection from 'containers/GroomBride';
 import Footer from 'containers/Footer';
 import WishBox from 'containers/WishBox';
 import useFadeInScroll, { useSlideInOnScroll } from 'hooks/useAppearOnScroll';
+import Invitation from 'containers/Invitation';
 
 function App() {
   useSlideInOnScroll();
@@ -13,7 +14,8 @@ function App() {
     <div className="App">
       <FullscreenPicture />
       <GroomAndBrideSection />
-      <AlbumSection />
+      <Invitation />
+      {/* <AlbumSection /> */}
       <WishBox />
       <Footer />
     </div>
