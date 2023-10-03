@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 export interface CardProps {
   imgUrl: string;
+  date?: string;
   title: string;
   description: string;
   imagePosition?: 'left' | 'right';
@@ -20,6 +21,7 @@ export default function Card(props: CardProps) {
     direction: propDirection = 'vertical',
     className = 'fade-in',
     imagePosition = 'left',
+    date,
   } = props;
 
   const windowWidth = useViewportWidth();
@@ -62,7 +64,8 @@ export default function Card(props: CardProps) {
         className={`object-cover object-center ${imgDimension}`}
         loading="lazy"
       />
-      <Space direction="vertical" size="large" align="center" className="p-8">
+      <Space direction="vertical" size="large" align="start" className="p-8">
+        <strong className="text-[#57442c]">{date}</strong>
         <h2 className="font-serif text-[#57442c]">{title}</h2>
         <p>{description}</p>
       </Space>
