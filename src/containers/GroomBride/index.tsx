@@ -4,7 +4,7 @@ import { TIMELINE_CARDS } from './constants';
 import './styles.css';
 import LazyBackgroundImage from 'components/LazyBackgroundImage';
 
-export default function GroomAndBrideSection() {
+export default function GroomAndBride() {
   const windowWidth = useViewportWidth();
 
   return (
@@ -39,12 +39,13 @@ export default function GroomAndBrideSection() {
             windowWidth > 900 && 'frame'
           }`}
         >
-          {TIMELINE_CARDS.map((card) => (
+          {TIMELINE_CARDS.map((card, index) => (
             <Card
               {...card}
               key={card.title}
               direction="horizontal"
               className={`slide-in from-bottom`}
+              imagePosition={index % 2 === 0 ? 'left' : 'right'}
             />
           ))}
           <h3 className="text-center">The story is to be continued...</h3>

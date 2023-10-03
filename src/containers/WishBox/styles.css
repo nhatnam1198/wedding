@@ -1,30 +1,23 @@
 .input {
-  background: rgba(255, 255, 255, 0.5);
-  border: none !important;
   transition: 0.5s;
-  width: 90%;
-  max-width: 600px;
+  width: 100%;
   height: 45px;
   font-family: Megante;
 }
 
 .text-area {
-  background: rgba(255, 255, 255, 0.5);
-  border: none !important;
   transition: 0.5s;
-  max-width: 600px;
+  width: 100%;
   font-family: Megante;
   max-height: 150px;
   overflow-y: auto;
   resize: none;
-  width: 90%;
   padding: 0.8rem;
 }
 
 .submit-button {
   font-family: Megante;
-  max-width: 600px;
-  width: 90%;
+  width: 100%;
   height: 45px;
   @apply bg-[#826542] hover:text-white hover:bg-stone-600 border-none text-white;
 }

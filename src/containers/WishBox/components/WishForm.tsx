@@ -42,8 +42,8 @@ export default function WishForm({
     >
       <Form
         form={form}
-        className="fullscreen-img-content w-full"
         name="wish-form"
+        className="mx-auto mb-20 max-w-[600px] w-11/12 fade-in"
         style={{ maxWidth: 600 }}
         onFinish={onFinish}
         autoComplete="off"
@@ -53,7 +53,10 @@ export default function WishForm({
           className="w-full text-black"
           rules={[{ required: true, message: 'Please let us know your name' }]}
         >
-          <Input className="input" placeholder="Your name" />
+          <Input
+            className="input focus:border-stone-400 hover:border-stone-400"
+            placeholder="Your name"
+          />
         </Form.Item>
         <Form.Item<FieldType>
           name="content"
@@ -67,7 +70,7 @@ export default function WishForm({
         >
           <Input.TextArea
             rows={6}
-            className="text-area"
+            className="text-area focus:border-stone-400 hover:border-stone-400"
             placeholder="Your kind wishes go here"
           />
         </Form.Item>

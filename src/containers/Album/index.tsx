@@ -1,22 +1,27 @@
 import { useMemo, useState } from 'react';
-import AlbumCard from './AlbumCard';
-import { ALBUMS, Album } from './constants';
 import './styles.css';
 import Modal from 'components/Modal';
 import { range } from 'lodash';
 import Carousel from 'react-spring-3d-carousel';
 import { CloseOutlined } from '@ant-design/icons';
-import LazyBackgroundImage from 'components/LazyBackgroundImage';
+import Gallery, { Image } from './Gallery';
 
-export default function AlbumSection() {
+type AlbumName = 'nha-hat' | 'song-sg' | 'ben-thanh' | 'sapa';
+
+const albumDict: Record<AlbumName, number> = {
+  'nha-hat': 14,
+  'song-sg': 18,
+  sapa: 22,
+  'ben-thanh': 16,
+};
+
+export default function Album() {
   const [open, setOpen] = useState(false);
 
   const [goToSlide, setGoToSlide] = useState(0);
-  const [selectedAlbum, setSelectedAlbum] = useState<Album['albumName']>();
+  const [selectedAlbum, setSelectedAlbum] = useState<AlbumName>();
 
-  const numberOfSlides =
-    ALBUMS.find((album) => album.albumName === selectedAlbum)?.numberOfPhotos ??
-    0;
+  const numberOfSlides = albumDict[selectedAlbum ?? 'ben-thanh'];
 
   const slides = useMemo(
     () =>
@@ -34,8 +39,8 @@ export default function AlbumSection() {
     [numberOfSlides, selectedAlbum],
   );
 
-  function onClickCard(albumName: Album['albumName']) {
-    setSelectedAlbum(albumName);
+  function onClickCard(album: AlbumName) {
+    setSelectedAlbum(album);
     setOpen(true);
     document.body.style.overflow = 'hidden';
   }
@@ -45,29 +50,70 @@ export default function AlbumSection() {
     document.body.style.overflow = 'auto';
   }
 
+  const IMAGES: Image[] = [
+    {
+      src: '/images/ben-thanh/1.jpeg',
+      numberOfPhotos: albumDict['ben-thanh'],
+      description: 'Hinh truoc cho Ben Thanh',
+      onClick: () => onClickCard('ben-thanh'),
+    },
+    {
+      src: '/images/song-sg/1.jpeg',
+      numberOfPhotos: albumDict['song-sg'],
+      description: 'Hinh truoc song Sai Gon',
+      onClick: () => onClickCard('song-sg'),
+      stretch: 'horizontal',
+    },
+    {
+      src: '/images/sapa/1.jpeg',
+      numberOfPhotos: albumDict['sapa'],
+      description: 'Hinh o Sapa',
+      onClick: () => onClickCard('sapa'),
+      stretch: 'big',
+    },
+    {
+      src: '/images/nha-hat/1.jpeg',
+      numberOfPhotos: albumDict['nha-hat'],
+      description: 'Hinh truoc nha hat thanh pho',
+      onClick: () => onClickCard('nha-hat'),
+    },
+    {
+      src: '/images/ben-thanh/2.jpeg',
+      numberOfPhotos: albumDict['ben-thanh'],
+      description: 'Hinh truoc cho Ben Thanh',
+      onClick: () => onClickCard('ben-thanh'),
+    },
+    {
+      src: '/images/song-sg/2.jpeg',
+      numberOfPhotos: albumDict['song-sg'],
+      description: 'Hinh truoc song Sai Gon',
+      onClick: () => onClickCard('song-sg'),
+      stretch: 'vertical',
+    },
+    {
+      src: '/images/sapa/2.jpeg',
+      numberOfPhotos: albumDict['sapa'],
+      description: 'Hinh o Sapa',
+      onClick: () => onClickCard('sapa'),
+    },
+    {
+      src: '/images/sapa/3.jpeg',
+      numberOfPhotos: albumDict['sapa'],
+      description: 'Hinh o Sapa',
+      onClick: () => onClickCard('sapa'),
+    },
+    {
+      src: '/images/nha-hat/2.jpeg',
+      numberOfPhotos: albumDict['nha-hat'],
+      description: 'Hinh truoc nha hat thanh pho',
+      onClick: () => onClickCard('nha-hat'),
+      stretch: 'horizontal',
+    },
+  ];
+
   return (
     <>
-      <LazyBackgroundImage
-        src="/images/background-bottom.png"
-        className="bg-contain bg-bottom bg-no-repeat relative pb-52"
-      >
-        <div className="section">
-          <h1 className="section-title">Moments</h1>
-          <div className="section-description">
-            Bliss unfurls when I gaze upon you, and within your eyes lies my
-            entire world.
-          </div>
-          <div className="grid auto-cols-auto lg:grid-cols-2 gap-4">
-            {ALBUMS.map((album) => (
-              <AlbumCard
-                {...album}
-                key={album.description}
-                onClick={() => onClickCard(album.albumName)}
-              />
-            ))}
-          </div>
-        </div>
-      </LazyBackgroundImage>
+      <Gallery images={IMAGES} />
       <Modal visible={open}>
         <CloseOutlined
           className="absolute top-10 right-10 cursor-pointer z-50 text-white text-2xl"

@@ -1,6 +1,6 @@
-import AlbumSection from 'containers/Album';
+import Album from 'containers/Album';
 import FullscreenPicture from './containers/FullscreenPicture';
-import GroomAndBrideSection from 'containers/GroomBride';
+import GroomAndBride from 'containers/GroomBride';
 import Footer from 'containers/Footer';
 import WishBox from 'containers/WishBox';
 import useFadeInScroll, { useSlideInOnScroll } from 'hooks/useAppearOnScroll';
@@ -13,9 +13,9 @@ function App() {
   return (
     <div className="App">
       <FullscreenPicture />
-      <GroomAndBrideSection />
+      <GroomAndBride />
       <Invitation />
-      {/* <AlbumSection /> */}
+      <Album />
       <WishBox />
       <Footer />
     </div>

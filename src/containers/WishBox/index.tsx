@@ -2,7 +2,6 @@ import './styles.css';
 import WishForm from './components/WishForm';
 import { Wish, getWishes } from 'api';
 import { useState, useEffect } from 'react';
-import LazyBackgroundImage from 'components/LazyBackgroundImage';
 import WishCard from './components/WishCard';
 import MySpinner from 'components/MySpinner';
 
@@ -48,7 +47,7 @@ export default function WishBox() {
     }
 
     return (
-      <div className="grid gap-10">
+      <div className="flex flex-col items-center gap-10 ">
         {data?.map((wish) => (
           <WishCard key={wish.content} {...wish} />
         ))}
@@ -58,19 +57,14 @@ export default function WishBox() {
 
   return (
     <>
-      <LazyBackgroundImage
-        className="w-screen min-h-[400px] footer bg-right-bottom bg-no-repeat bg-cover relative"
-        src="/images/sapa/8.jpeg"
-      >
-        <WishForm refetch={getWishesList} />
-      </LazyBackgroundImage>
-      <div className="flex flex-col items-center py-20">
+      <div className="flex flex-col items-center mt-20 mb-10">
         <div className="from-bottom slide-in">
           <img src="/images/floral-ring.png" alt="" className="w-[270px]" />
           <h1 className="section-title -translate-y-[210px]">Guestbook</h1>
         </div>
         {renderWishesList()}
       </div>
+      <WishForm refetch={getWishesList} />
     </>
   );
 }

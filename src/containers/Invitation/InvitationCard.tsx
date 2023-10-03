@@ -15,7 +15,7 @@ export default function InvitationCard(props: InvitationCardProps) {
   const { locationName, locationDetail, datetime, title } = props;
 
   return (
-    <div className="flex flex-col gap-8 items-center bg-[#d8c393] max-w-[99%] h-fit p-8 w-[550px] mx-auto rounded-xl text-center">
+    <div className="flex flex-col gap-8 items-center bg-[#d8c393] max-w-[99%] h-fit p-8 w-[550px] mx-auto rounded-xl text-center fade-in">
       <h1>{title}</h1>
       <HeartFilled />
       <div className="flex flex-col items-center gap-4">
