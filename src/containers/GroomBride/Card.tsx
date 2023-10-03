@@ -8,7 +8,7 @@ export interface CardProps {
   date?: string;
   title: string;
   description: string;
-  imagePosition?: 'left' | 'right';
+  imagePosition?: 'left' | 'right' | 'top';
   direction?: SpaceProps['direction'];
   className?: string;
 }
@@ -20,7 +20,7 @@ export default function Card(props: CardProps) {
     description,
     direction: propDirection = 'vertical',
     className = 'fade-in',
-    imagePosition = 'left',
+    imagePosition = 'top',
     date,
   } = props;
 
@@ -44,10 +44,13 @@ export default function Card(props: CardProps) {
       ? 'w-[450px] h-[350px] rounded-t-2xl'
       : 'w-[300px] h-[296px]';
 
-  imgDimension =
-    imagePosition === 'left' && direction === 'horizontal'
-      ? `${imgDimension} rounded-l-2xl`
-      : `${imgDimension} rounded-r-2xl`;
+  if (imagePosition === 'left') {
+    imgDimension = `${imgDimension} rounded-l-2xl`;
+  }
+
+  if (imagePosition === 'right') {
+    imgDimension = `${imgDimension} rounded-r-2xl`;
+  }
 
   return (
     <div
@@ -64,7 +67,12 @@ export default function Card(props: CardProps) {
         className={`object-cover object-center ${imgDimension}`}
         loading="lazy"
       />
-      <Space direction="vertical" size="large" align="start" className="p-8">
+      <Space
+        direction="vertical"
+        size="large"
+        align={imagePosition === 'top' ? 'center' : 'start'}
+        className="p-8"
+      >
         <strong className="text-[#57442c]">{date}</strong>
         <h2 className="font-serif text-[#57442c]">{title}</h2>
         <p>{description}</p>
