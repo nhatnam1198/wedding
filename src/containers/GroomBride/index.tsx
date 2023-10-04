@@ -13,24 +13,21 @@ export default function GroomAndBride() {
       className="bg-contain bg-top bg-no-repeat relative"
     >
       <div className="section relative h-fit">
-        <h1 className="section-title fade-in">Groom and Bride</h1>
+        <h1 className="section-title fade-in">Hành trình yêu</h1>
+        <h2>2020-2023</h2>
         <div className="section-description fade-in">
-          In recent years, an alligator is an anthony’s event. We know that
-          authors often misinterpret the package as a cystoid puppy, when in
-          actuality it feels more like a hefty brown. The nervy doll reveals
-          itself as an endless colony to those who look. ships are licensed
-          ashtraies.
+          Nàng là một cô gái vui vẻ, hoạt bát còn chàng là một chàng trai lầm lì và gai góc. Dường như cả hai có hai thế giới hoàn toàn khác biệt. Tuy vậy nàng và chàng đã được gặp nhau giữa lòng Sài Gòn vào cái mùa đẹp nhất trong năm. Và dưới bầu trời xanh ngát, họ đã cùng nhau tạo nên một câu chuyện tình yêu đầy màu sắc.
         </div>
         <div className="flex flex-col lg:flex-row gap-8">
           <Card
             imgUrl="./images/groom.jpeg"
             title="Ngọc Hoàng"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate non eaque ex quo iste totam ducimus commodi quibusdam porro vero reiciendis excepturi, repellendus reprehenderit ab ipsum nisi quia veniam officiis?"
+            description=""
           />
           <Card
             imgUrl="./images/bride.jpeg"
             title="Tú Trinh"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate non eaque ex quo iste totam ducimus commodi quibusdam porro vero reiciendis excepturi, repellendus reprehenderit ab ipsum nisi quia veniam officiis?"
+            description=""
           />
         </div>
 
