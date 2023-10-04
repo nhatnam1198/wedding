@@ -18,6 +18,10 @@
   filter: drop-shadow(5px 5px 10px #666);
 }
 
+.drop-shadow {
+  filter: drop-shadow(5px 5px 10px #666);
+}
+
 .fullscreen-img-title {
   font-size: 4rem;
   font-weight: 600;

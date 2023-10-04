@@ -16,7 +16,7 @@ export default function GroomAndBride() {
     >
       <div className="section relative h-fit">
         <h1 className="section-title fade-in">Hành trình yêu</h1>
-        <h2>2020-2023</h2>
+        <h3>2020-2023</h3>
         <div className="section-description fade-in">
           Nàng là một cô gái vui vẻ, hoạt bát còn chàng là một chàng trai lầm lì
           và gai góc. Dường như cả hai có hai thế giới hoàn toàn khác biệt. Tuy
