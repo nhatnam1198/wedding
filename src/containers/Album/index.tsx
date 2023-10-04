@@ -6,13 +6,14 @@ import Carousel from 'react-spring-3d-carousel';
 import { CloseOutlined } from '@ant-design/icons';
 import Gallery, { Image } from './Gallery';
 
-type AlbumName = 'nha-hat' | 'song-sg' | 'ben-thanh' | 'sapa';
+type AlbumName = 'nha-hat' | 'song-sg' | 'ben-thanh' | 'sapa' | 'tabby';
 
 const albumDict: Record<AlbumName, number> = {
   'nha-hat': 14,
   'song-sg': 18,
-  sapa: 22,
+  'sapa': 22,
   'ben-thanh': 16,
+  'tabby': 1,
 };
 
 export default function Album() {
@@ -51,13 +52,13 @@ export default function Album() {
 
   const IMAGES: Image[] = [
     {
-      src: '/images/ben-thanh/1.jpeg',
+      src: '/images/ben-thanh/7.jpeg',
       numberOfPhotos: albumDict['ben-thanh'],
       description: 'Hinh truoc cho Ben Thanh',
       onClick: () => onClickCard('ben-thanh'),
     },
     {
-      src: '/images/song-sg/1.jpeg',
+      src: '/images/song-sg/10.jpeg',
       numberOfPhotos: albumDict['song-sg'],
       description: 'Hinh truoc song Sai Gon',
       onClick: () => onClickCard('song-sg'),
@@ -71,43 +72,43 @@ export default function Album() {
       stretch: 'big',
     },
     {
-      src: '/images/nha-hat/1.jpeg',
+      src: '/images/nha-hat/12.jpeg',
       numberOfPhotos: albumDict['nha-hat'],
       description: 'Hinh truoc nha hat thanh pho',
       onClick: () => onClickCard('nha-hat'),
     },
     {
-      src: '/images/ben-thanh/2.jpeg',
-      numberOfPhotos: albumDict['ben-thanh'],
-      description: 'Hinh truoc cho Ben Thanh',
-      onClick: () => onClickCard('ben-thanh'),
+      src: '/images/tabby/1.jpeg',
+      numberOfPhotos: albumDict['tabby'],
+      description: 'Tabby',
+      onClick: () => onClickCard('tabby'),
     },
-    {
-      src: '/images/song-sg/2.jpeg',
-      numberOfPhotos: albumDict['song-sg'],
-      description: 'Hinh truoc song Sai Gon',
-      onClick: () => onClickCard('song-sg'),
-      stretch: 'vertical',
-    },
-    {
-      src: '/images/sapa/2.jpeg',
-      numberOfPhotos: albumDict['sapa'],
-      description: 'Hinh o Sapa',
-      onClick: () => onClickCard('sapa'),
-    },
-    {
-      src: '/images/sapa/3.jpeg',
-      numberOfPhotos: albumDict['sapa'],
-      description: 'Hinh o Sapa',
-      onClick: () => onClickCard('sapa'),
-    },
-    {
-      src: '/images/nha-hat/2.jpeg',
-      numberOfPhotos: albumDict['nha-hat'],
-      description: 'Hinh truoc nha hat thanh pho',
-      onClick: () => onClickCard('nha-hat'),
-      stretch: 'horizontal',
-    },
+    // {
+    //   src: '/images/song-sg/2.jpeg',
+    //   numberOfPhotos: albumDict['song-sg'],
+    //   description: 'Hinh truoc song Sai Gon',
+    //   onClick: () => onClickCard('song-sg'),
+    //   stretch: 'vertical',
+    // },
+    // {
+    //   src: '/images/sapa/2.jpeg',
+    //   numberOfPhotos: albumDict['sapa'],
+    //   description: 'Hinh o Sapa',
+    //   onClick: () => onClickCard('sapa'),
+    // },
+    // {
+    //   src: '/images/sapa/3.jpeg',
+    //   numberOfPhotos: albumDict['sapa'],
+    //   description: 'Hinh o Sapa',
+    //   onClick: () => onClickCard('sapa'),
+    // },
+    // {
+    //   src: '/images/nha-hat/2.jpeg',
+    //   numberOfPhotos: albumDict['nha-hat'],
+    //   description: 'Hinh truoc nha hat thanh pho',
+    //   onClick: () => onClickCard('nha-hat'),
+    //   stretch: 'horizontal',
+    // },
   ];
 
   return (
