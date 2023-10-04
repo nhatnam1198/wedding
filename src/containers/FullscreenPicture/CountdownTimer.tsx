@@ -43,24 +43,24 @@ export default function CountdownTimer() {
 
   return (
     <Space direction="vertical" style={{ textShadow: '1px 1px 2px black' }}>
-      <strong>Save the date: 22 Oct 2023</strong>
+      <strong>Ngày Mon gả cho Oxy: 22.10.2023</strong>
 
       <Space direction="horizontal" size={30}>
         <Space direction="vertical">
           {days ? days : <MySpinner />}
-          DAYS
+          Ngày
         </Space>
         <Space direction="vertical">
           {hours ? hours : <MySpinner />}
-          HOURS
+          Giờ
         </Space>
         <Space direction="vertical">
           {minutes ? minutes : <MySpinner />}
-          MINUTES
+          Phút
         </Space>
         <Space direction="vertical">
           {seconds ? seconds : <MySpinner />}
-          SECONDS
+          Giây
         </Space>
       </Space>
     </Space>
