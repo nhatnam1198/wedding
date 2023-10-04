@@ -3,10 +3,14 @@ import { Space } from 'antd';
 import { WEDDING_DATE } from 'appConstants';
 import { useEffect, useState } from 'react';
 import MySpinner from 'components/MySpinner';
+import useViewportWidth from 'hooks/useViewportWidth';
 
 export default function CountdownTimer() {
   const countDownDate = dayjs(WEDDING_DATE).valueOf();
   const now = dayjs().valueOf();
+
+  const viewportWidth = useViewportWidth();
+  const datetimeGap = viewportWidth > 900 ? 7 : 1;
 
   const [distance, setDistance] = useState(countDownDate - now);
   const [days, setDays] = useState<number>();
@@ -42,23 +46,28 @@ export default function CountdownTimer() {
   }
 
   return (
-    <Space direction="vertical" style={{ textShadow: '1px 1px 2px black' }}>
+    <Space
+      direction="vertical"
+      style={{ textShadow: '1px 1px 2px black' }}
+      className={viewportWidth < 900 ? 'text-sm' : ''}
+      size={datetimeGap}
+    >
       <strong>Ngày Mon gả cho Oxy: 22.10.2023</strong>
 
       <Space direction="horizontal" size={30}>
-        <Space direction="vertical">
+        <Space direction="vertical" size={datetimeGap}>
           {days ? days : <MySpinner />}
           Ngày
         </Space>
-        <Space direction="vertical">
+        <Space direction="vertical" size={datetimeGap}>
           {hours ? hours : <MySpinner />}
           Giờ
         </Space>
-        <Space direction="vertical">
+        <Space direction="vertical" size={datetimeGap}>
           {minutes ? minutes : <MySpinner />}
           Phút
         </Space>
-        <Space direction="vertical">
+        <Space direction="vertical" size={datetimeGap}>
           {seconds ? seconds : <MySpinner />}
           Giây
         </Space>

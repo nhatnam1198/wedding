@@ -22,7 +22,7 @@
   font-size: 4rem;
   font-weight: 600;
   font-family: Drainwood;
-  margin-bottom: 3em;
+  margin-bottom: 0.5em;
 }
 
 @media screen and (max-width: 768px) {
@@ -31,10 +31,12 @@
   }
 
   .fullscreen-img-title {
-    font-size: 3rem;
+    font-size: 2.1rem;
+    margin-bottom: 0.4em;
   }
 
   .fullscreen-img-content {
     font-size: 1rem;
+    top: 65%;
   }
 }
