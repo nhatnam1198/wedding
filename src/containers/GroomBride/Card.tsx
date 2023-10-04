@@ -1,4 +1,5 @@
 import { Space, SpaceProps } from 'antd';
+import classNames from 'classnames';
 import useViewportWidth from 'hooks/useViewportWidth';
 import { useEffect, useState } from 'react';
 
@@ -10,6 +11,7 @@ export interface CardProps {
   imagePosition?: 'left' | 'right' | 'top';
   direction?: SpaceProps['direction'];
   className?: string;
+  imgClassName?: string;
 }
 
 export default function Card(props: CardProps) {
@@ -20,6 +22,8 @@ export default function Card(props: CardProps) {
     direction: propDirection = 'vertical',
     imagePosition = 'top',
     date,
+    className,
+    imgClassName,
   } = props;
 
   const windowWidth = useViewportWidth();
@@ -35,33 +39,31 @@ export default function Card(props: CardProps) {
 
   const containerDimension =
     direction === 'vertical'
-      ? 'w-[450px] min-h-[600px] flex-col'
+      ? 'w-[450px] min-h-[400px] flex-col'
       : 'w-[800px] min-h-[300px] flex-row';
   let imgDimension =
     direction === 'vertical'
-      ? 'w-[450px] h-[350px] rounded-t-2xl'
-      : 'w-[300px] h-[296px]';
-
-  if (imagePosition === 'left' && direction === 'horizontal') {
-    imgDimension = `${imgDimension} rounded-l-2xl`;
-  }
-
-  if (imagePosition === 'right' && direction === 'horizontal') {
-    imgDimension = `${imgDimension} rounded-r-2xl`;
-  }
+      ? 'w-[450px] h-[375px]'
+      : 'w-[300px] min-h-[300px]';
 
   return (
     <div
-      className={`${containerDimension} max-w-[90vw] h-fit flex ${
-        imagePosition === 'right' ? 'flex-row-reverse' : 'flex-row'
-      } border-2 border-stone-400 rounded-2xl ${
-        direction === 'horizontal' ? 'slide-in from-bottom' : 'fade-in'
-      }`}
+      className={classNames(
+        className,
+        `${containerDimension} overflow-hidden max-w-[90vw] h-fit flex ${
+          imagePosition === 'right' ? 'flex-row-reverse' : 'flex-row'
+        } border-2 border-stone-400 rounded-2xl ${
+          direction === 'horizontal' ? 'slide-in from-bottom' : 'fade-in'
+        }`,
+      )}
     >
       <img
         src={imgUrl}
         alt={title}
-        className={`object-cover object-center ${imgDimension}`}
+        className={classNames(
+          `object-cover object-center ${imgDimension}`,
+          imgClassName,
+        )}
         loading="lazy"
       />
       <Space
@@ -71,7 +73,9 @@ export default function Card(props: CardProps) {
         className="p-8"
       >
         <strong className="text-[#57442c]">{date}</strong>
-        <h2 className="font-serif text-[#57442c]">{title}</h2>
+        <h2 className="font-serif text-[#57442c] whitespace-pre-line">
+          {title}
+        </h2>
         <p className="card-description">{description}</p>
       </Space>
     </div>

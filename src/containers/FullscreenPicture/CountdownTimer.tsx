@@ -38,18 +38,26 @@ export default function CountdownTimer() {
   }, [distance, countDownDate]);
 
   if (days === 0) {
-    return <p>The wedding is today!</p>;
+    return (
+      <p className="drop-shadow" style={{ textShadow: '1px 1px 2px black' }}>
+        The wedding is today!
+      </p>
+    );
   }
 
   if (distance < 0) {
-    return <p>We are married!</p>;
+    return (
+      <p className="drop-shadow" style={{ textShadow: '1px 1px 2px black' }}>
+        We are married!
+      </p>
+    );
   }
 
   return (
     <Space
       direction="vertical"
       style={{ textShadow: '1px 1px 2px black' }}
-      className={viewportWidth < 900 ? 'text-sm' : ''}
+      className={`${viewportWidth < 900 ? 'text-sm' : ''} drop-shadow`}
       size={datetimeGap}
     >
       <strong>Ngày Mon gả cho Oxy: 22.10.2023</strong>

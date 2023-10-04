@@ -11,9 +11,9 @@ type AlbumName = 'nha-hat' | 'song-sg' | 'ben-thanh' | 'sapa' | 'tabby';
 const albumDict: Record<AlbumName, number> = {
   'nha-hat': 14,
   'song-sg': 18,
-  'sapa': 22,
+  sapa: 22,
   'ben-thanh': 16,
-  'tabby': 1,
+  tabby: 1,
 };
 
 export default function Album() {
