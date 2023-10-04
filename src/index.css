@@ -44,6 +44,11 @@
 
 .section-description {
   @apply px-4 lg:px-28;
+  color: dimgray;
+}
+
+.card-description {
+  color: dimgray;
 }
 
 .fade-in {

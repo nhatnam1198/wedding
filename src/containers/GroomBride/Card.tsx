@@ -72,7 +72,7 @@ export default function Card(props: CardProps) {
       >
         <strong className="text-[#57442c]">{date}</strong>
         <h2 className="font-serif text-[#57442c]">{title}</h2>
-        <p>{description}</p>
+        <p className="card-description">{description}</p>
       </Space>
     </div>
   );
