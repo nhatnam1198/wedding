@@ -8,6 +8,7 @@ export const INVITATION_INFO: InvitationCardProps[] = [
     locationName: 'Thánh Đường Giáo Xứ Đông Quang',
     locationDetail: '35 Đông Hưng Thuận 2, Đông Hưng Thuận, Quận 12',
     icon: <SketchOutlined />,
+    locationUrl: 'https://maps.app.goo.gl/wHBiqQLuL3QDzMst8',
   },
   {
     title: 'Tiệc cưới',
@@ -15,5 +16,6 @@ export const INVITATION_INFO: InvitationCardProps[] = [
     datetime: '17h30 chủ nhật, ngày 22.10.2023\n(Nhằm ngày 08.09 năm Quý Mão)',
     locationName: 'The Adora Center - Sảnh Crystal',
     locationDetail: '431 Hoàng Văn Thụ, phường 4, Quận Tân Bình',
+    locationUrl: 'https://maps.app.goo.gl/b1HPmpQdXpDyuq278',
   },
 ];

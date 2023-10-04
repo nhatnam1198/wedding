@@ -1,5 +1,4 @@
 import { Space, SpaceProps } from 'antd';
-import classNames from 'classnames';
 import useViewportWidth from 'hooks/useViewportWidth';
 import { useEffect, useState } from 'react';
 
@@ -19,7 +18,6 @@ export default function Card(props: CardProps) {
     title,
     description,
     direction: propDirection = 'vertical',
-    className = 'fade-in',
     imagePosition = 'top',
     date,
   } = props;
@@ -44,22 +42,21 @@ export default function Card(props: CardProps) {
       ? 'w-[450px] h-[350px] rounded-t-2xl'
       : 'w-[300px] h-[296px]';
 
-  if (imagePosition === 'left') {
+  if (imagePosition === 'left' && direction === 'horizontal') {
     imgDimension = `${imgDimension} rounded-l-2xl`;
   }
 
-  if (imagePosition === 'right') {
+  if (imagePosition === 'right' && direction === 'horizontal') {
     imgDimension = `${imgDimension} rounded-r-2xl`;
   }
 
   return (
     <div
-      className={classNames(
-        className,
-        `${containerDimension} max-w-[90vw] h-fit flex ${
-          imagePosition === 'right' ? 'flex-row-reverse' : 'flex-row'
-        } border-2 border-stone-400 rounded-2xl`,
-      )}
+      className={`${containerDimension} max-w-[90vw] h-fit flex ${
+        imagePosition === 'right' ? 'flex-row-reverse' : 'flex-row'
+      } border-2 border-stone-400 rounded-2xl ${
+        direction === 'horizontal' ? 'slide-in from-bottom' : 'fade-in'
+      }`}
     >
       <img
         src={imgUrl}

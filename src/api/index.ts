@@ -3,6 +3,7 @@ import db from './firebase';
 
 export interface Wish {
   createdBy: string;
+  createdAt: string;
   content: string;
 }
 

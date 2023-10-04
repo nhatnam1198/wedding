@@ -1,9 +1,12 @@
 import './styles.css';
-import WishForm from './components/WishForm';
+import WishForm from './WishForm';
 import { Wish, getWishes } from 'api';
 import { useState, useEffect } from 'react';
-import WishCard from './components/WishCard';
+import WishCard from './WishCard';
 import MySpinner from 'components/MySpinner';
+import { Button, Empty } from 'antd';
+import dayjs from 'dayjs';
+import { DATETIME_FORMAT } from 'appConstants';
 
 interface AsyncState<Type> {
   loading?: boolean;
@@ -17,13 +20,23 @@ export default function WishBox() {
   });
 
   const { data, loading, error } = wishes;
+  const [showAll, setShowAll] = useState(false);
 
   async function getWishesList() {
     setWishes({ loading: true });
 
     try {
       const data = await getWishes();
-      setWishes({ loading: false, data: data as unknown as Wish[] });
+
+      setWishes({
+        loading: false,
+        data: data.sort(
+          // @ts-ignore
+          (a: Wish, b: Wish) =>
+            dayjs(b.createdAt, DATETIME_FORMAT).valueOf() -
+            dayjs(a.createdAt, DATETIME_FORMAT).valueOf(),
+        ) as unknown as Wish[],
+      });
     } catch (error) {
       setWishes({ loading: false, error: error as Error });
     }
@@ -33,6 +46,8 @@ export default function WishBox() {
     getWishesList();
   }, []);
 
+  const displayedWishes = showAll ? data : data?.slice(0, 4);
+
   function renderWishesList() {
     if (loading) {
       return <MySpinner color="#826542" />;
@@ -40,17 +55,39 @@ export default function WishBox() {
 
     if (error || data?.length === 0) {
       return (
-        <p className="max-w-[90%]">
-          It looks empty. Send the bridal couple your best wishes!
-        </p>
+        <Empty
+          description={
+            <p className="text-black">
+              It looks empty. Send the bridal couple your best wishes!
+            </p>
+          }
+        />
       );
     }
 
     return (
-      <div className="flex flex-col items-center gap-10 ">
-        {data?.map((wish) => (
+      <div className="flex flex-col items-center gap-8 w-full">
+        {displayedWishes?.map((wish) => (
           <WishCard key={wish.content} {...wish} />
         ))}
+        {!showAll && data && data.length > 4 && (
+          <Button
+            type="link"
+            onClick={() => setShowAll(true)}
+            className="text-blue-500 underline cursor-pointer font-sans text-base"
+          >
+            Xem thêm
+          </Button>
+        )}
+        {showAll && (
+          <Button
+            type="link"
+            onClick={() => setShowAll(false)}
+            className="text-blue-500 underline cursor-pointer font-sans text-base"
+          >
+            Rút gọn
+          </Button>
+        )}
       </div>
     );
   }

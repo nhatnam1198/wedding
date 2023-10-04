@@ -1,6 +1,8 @@
 import { Form, Input, Button, ConfigProvider } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import { Wish, createWish } from 'api';
+import { DATETIME_FORMAT } from 'appConstants';
+import dayjs from 'dayjs';
 import { useState } from 'react';
 
 type FieldType = Wish;
@@ -17,7 +19,10 @@ export default function WishForm({
     setButtonLoading(true);
 
     try {
-      await createWish(values);
+      await createWish({
+        ...values,
+        createdAt: dayjs().format(DATETIME_FORMAT),
+      });
       setButtonLoading(false);
       form.resetFields();
       refetch();

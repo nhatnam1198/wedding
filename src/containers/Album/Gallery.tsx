@@ -1,13 +1,8 @@
-// Play around with these 3 classes  to get the look you want
-// v-stretch (expand vertically)
-// h-stretch (expand horizontally)
-// big-strectch (expand vertically and horizontally)
-
-// Always put .fade-in in every div image
-
 import classNames from 'classnames';
 
 export interface Image {
+  // the image will expand either horizontally, vertically, or both ways.
+  // play around with this property to get the look you want
   stretch?: 'horizontal' | 'vertical' | 'big';
   src: string;
   numberOfPhotos?: number;

@@ -31,7 +31,6 @@ export default function Album() {
           <img
             src={`/images/${selectedAlbum}/${index + 1}.jpeg`}
             alt={selectedAlbum}
-            loading="eager"
           />
         ),
         onClick: () => setGoToSlide(index),

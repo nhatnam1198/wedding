@@ -13,8 +13,8 @@ export default function GroomAndBride() {
       className="bg-contain bg-top bg-no-repeat relative"
     >
       <div className="section relative h-fit">
-        <h1 className="section-title">Groom and Bride</h1>
-        <div className="section-description">
+        <h1 className="section-title fade-in">Groom and Bride</h1>
+        <div className="section-description fade-in">
           In recent years, an alligator is an anthony’s event. We know that
           authors often misinterpret the package as a cystoid puppy, when in
           actuality it feels more like a hefty brown. The nervy doll reveals
@@ -44,7 +44,6 @@ export default function GroomAndBride() {
               {...card}
               key={card.title}
               direction="horizontal"
-              className={`slide-in from-bottom`}
               imagePosition={index % 2 === 0 ? 'left' : 'right'}
             />
           ))}

@@ -9,6 +9,7 @@ export default function Invitation() {
       className="bg-contain bg-bottom bg-no-repeat relative pb-52 w-screen"
     >
       <div className="section">
+        <h1>Sự kiện cưới</h1>
         {INVITATION_INFO.map((info) => (
           <InvitationCard {...info} key={info.title} />
         ))}
