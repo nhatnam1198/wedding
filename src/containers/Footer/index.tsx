@@ -4,7 +4,7 @@ import './styles.css';
 export default function Footer() {
   return (
     <LazyBackgroundImage
-      src="/images/song-sg/15.jpeg"
+      src="/images/footer-1.jpg"
       className="footer h-[250px]"
     >
       <div className="fullscreen-img-content flex flex-col gap-4">
