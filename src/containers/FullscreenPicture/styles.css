@@ -1,0 +1,47 @@
+.fullscreen-img {
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100vw;
+}
+
+.fullscreen-img-content {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  filter: drop-shadow(5px 5px 10px #666);
+}
+
+.drop-shadow {
+  filter: drop-shadow(2px 2px 3px #666);
+}
+
+.fullscreen-img-title {
+  font-size: 4rem;
+  font-weight: 600;
+  font-family: Drainwood;
+  margin-bottom: 0.5em;
+  line-height: 1.1;
+}
+
+@media screen and (orientation: portrait) {
+  .fullscreen-img {
+    height: 35vh;
+  }
+
+  .fullscreen-img-title {
+    font-size: 2rem;
+    margin-bottom: 0.2em;
+  }
+
+  .fullscreen-img-content {
+    font-size: 0.8rem;
+    top: 65%;
+  }
+}
