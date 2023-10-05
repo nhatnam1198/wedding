@@ -33,7 +33,7 @@ export default function Card(props: CardProps) {
   // Determine the direction based on windowWidth
   useEffect(() => {
     if (propDirection === 'horizontal') {
-      setDirection(windowWidth >= 900 ? 'horizontal' : 'vertical');
+      setDirection(windowWidth >= 768 ? 'horizontal' : 'vertical');
     }
   }, [windowWidth, propDirection]);
 

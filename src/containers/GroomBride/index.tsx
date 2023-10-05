@@ -44,7 +44,7 @@ export default function GroomAndBride() {
 
         <div
           className={`flex flex-col items-center gap-8 ${
-            windowWidth > 900 && 'frame'
+            windowWidth >= 768 && 'frame'
           }`}
         >
           {TIMELINE_CARDS.map((card, index) => (
